@@ -1,0 +1,25 @@
+.swiper-slide{
+    transition:400ms all ease-in-out;
+}
+.ion-card{
+    border-radius: 12px;
+    object-fit: cover;
+    transform: scale(1.1,1.1)rotate(1deg);
+    
+}
+.swiper-slide-active{
+    transform: scale(1.05,1.05);
+    ion-card{
+        transform: scale(1,1);
+
+    }
+}
+.swiper-slide{
+    transition: 400ms all ease-in-out;
+}
+.user{
+height: 40px;
+width: 40px;
+color: #C8C8CC;
+
+}

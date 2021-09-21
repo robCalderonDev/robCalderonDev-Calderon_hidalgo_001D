@@ -1,0 +1,74 @@
+<ion-header>
+  <ion-toolbar >
+    <ion-buttons slot="start" >
+      <ion-button (click)="mostrarMenu() ">
+        <ion-icon slot="icon-only" name="menu-outline"></ion-icon>
+        
+      </ion-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-avatar>
+       <!-- <ion-img class="user" src="/assets/avatar.svg"></ion-img>-->
+       <ion-icon  class="user" name="person-circle-outline"></ion-icon>
+      </ion-avatar>
+    </ion-buttons>
+    <ion-title>inicio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="" >
+  <ion-item color="success">
+    <ion-label >Nuevas recetas</ion-label>
+  </ion-item>
+  
+  <ion-slides [options]="option" class="ion-padding ">
+    <ion-slide>
+      <ion-router-link href="/recetas/receta1">
+        <ion-card>
+          <ion-card-header>
+            <ion-img src="/assets/galletas.jpg"></ion-img>
+            <ion-card-title>muffin de gabazo de almendras</ion-card-title>
+          </ion-card-header>
+        
+          <ion-card-content>
+            Para esta deliciosa receta, trabajaremos con bagazo de almendra Te sorprenderá el delicioso sabor de este rico postre
+          </ion-card-content>
+        </ion-card>
+      </ion-router-link>
+    </ion-slide>  
+    <ion-slide>
+      <ion-router-link href="/recetas">
+      <ion-card>
+        <ion-card-header>
+          <ion-img src="/assets/pan.jpg"></ion-img>
+          <ion-card-title>Pan de bagazo de coco  y de naranja</ion-card-title>
+        </ion-card-header>
+      
+        <ion-card-content>
+          Con esta deliciosa receta podrás utilizar el bagazo que queda después de preparar leche de coco y el salvado que queda después de refinar los granos de avena, ¡te sorprenderá su sabor!
+        </ion-card-content>
+      </ion-card>
+      </ion-router-link>
+    </ion-slide>  
+    <ion-slide>
+      <ion-router-link href="/recetas/receta3">
+      <ion-card>
+        <ion-card-header>
+          <ion-img src="/assets/ensalada.jpg"></ion-img>
+          <ion-card-title>Ensalada de quinoa, con queso y nueces</ion-card-title>
+        </ion-card-header>
+      
+        <ion-card-content>
+          manten un almuerzo fresco y bajo en calorias te va a encantar!
+        </ion-card-content>
+      </ion-card>
+      </ion-router-link>
+    </ion-slide>  
+  </ion-slides>
+  
+
+  
+  
+  
+</ion-content>
