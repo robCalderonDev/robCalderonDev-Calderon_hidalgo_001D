@@ -21,6 +21,25 @@ const routes: Routes = [
     path: 'formulario',
     loadChildren: () => import('./pages/formulario/formulario.module').then( m => m.FormularioPageModule)
   },
+  {
+    path: 'login',
+    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'verificado',
+    loadChildren: () => import('./pages/verificado/verificado.module').then( m => m.VerificadoPageModule)
+  },
+  {
+    path: 'no-verificado',
+    loadChildren: () => import('./pages/no-verificado/no-verificado.module').then( m => m.NoVerificadoPageModule)
+  },
+  {
+    path: 'datos',
+    loadChildren: () => import('./pages/datos/datos.module').then( m => m.DatosPageModule)
+  },
+
+  
+
   
 
 ];

@@ -1,52 +1,47 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AlertController } from '@ionic/angular';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
-  selector: 'app-formulario',
-  templateUrl: './formulario.page.html',
-  styleUrls: ['./formulario.page.scss'],
+  selector: 'app-login',
+  templateUrl: './login.page.html',
+  styleUrls: ['./login.page.scss'],
 })
-export class FormularioPage implements OnInit {
-
+export class LoginPage implements OnInit {
 
   usuario = {
 
-    nombre:'',
-    apellidos:'',
-    edad:'',
+   
     correo:'',
     password:'',
     
 
   }
 
-
-  constructor(private authSvc: AuthService, private router:Router) {}
+  constructor(private authSvc: AuthService, private router: Router) { }
 
   ngOnInit() {
   }
-
+  
   onSubmit(){
 
     console.log('submit');
     console.log(this.usuario);
 
   }
-  async onRegister(email, password){
+
+  async onLogin(email, password){
     try{
-      const user = await this.authSvc.register(email.value, password.value);
+      const user = await this.authSvc.login(email.value, password.value);
       if (user){
-        console.log('User', user);
-        const isVerified= this.authSvc.isEmailVerified(user);
+        const isVerified = this.authSvc.isEmailVerified(user);
         this.redirectUser(isVerified);
       }
     }catch(error){
     console.log('Error: ', error)
   };
  }
-
+  
  redirectUser(isVerified:boolean): void{
   if(isVerified){
     this.router.navigate(["verificado"]);
@@ -58,4 +53,3 @@ export class FormularioPage implements OnInit {
  }
 
 }
-

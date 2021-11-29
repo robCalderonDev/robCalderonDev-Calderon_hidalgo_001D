@@ -13,15 +13,26 @@ interface Componente {
 export class AppComponent {
   componentes : Componente []=[
     {
-      icon :'bug-outline',
+      icon :'book-outline',
       name :'Recetas',
       redirecTo:'/recetas'
     },
     {
-      icon :'cafe-outline',
+      icon :'clipboard-outline',
       name :'Registrarse',
       redirecTo:'/formulario'
     },
+    {
+      icon :'enter-outline',
+      name :'Login',
+      redirecTo:'/login'
+    },
+    {
+      icon :'person-outline',
+      name :'Datos',
+      redirecTo:'/datos'
+    },
+    
     
   ];
   constructor() {}
