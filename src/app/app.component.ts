@@ -32,6 +32,11 @@ export class AppComponent {
       name :'Datos',
       redirecTo:'/datos'
     },
+    {
+      icon :'albums-outline',
+      name :'Api',
+      redirecTo:'/api'
+    },
     
     
   ];
