@@ -36,7 +36,7 @@ export class DatosPage implements OnInit {
     this.newDato.id = Date.now();
     this.storageService.addDatos(this.newDato).then(dato=>{
       this.newDato = <Datos>{};
-      this.showToast('Se Agregarón los Datos');
+      this.showToast('Se Agregó la sugerencia');
       this.loadDatos();
     });
   }

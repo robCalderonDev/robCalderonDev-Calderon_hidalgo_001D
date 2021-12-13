@@ -19,8 +19,16 @@
 }
 
 .user{
-    
+    position: center;
     height: 80px;
     width: 80px;
+    
+}
+.ion-padding{
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
     
 }

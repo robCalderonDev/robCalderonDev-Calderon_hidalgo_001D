@@ -19,7 +19,7 @@ export class AppComponent {
     },
     {
       icon :'person-outline',
-      name :'Datos',
+      name :'Sugerencias',
       redirecTo:'/datos'
     },
     {
