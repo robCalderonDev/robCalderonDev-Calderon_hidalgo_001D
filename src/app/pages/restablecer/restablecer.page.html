@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button
+          defaultHref="/login"
+          text="Volver"
+          color="primary">
+          </ion-back-button>
+    </ion-buttons>
+
+    <ion-title>Restablecer Contraseña</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+
+ 
+  <form >
+
+    <ion-item>
+
+      <ion-label position="floating">Correo: </ion-label>
+
+      <ion-input type="correo" placeholder="Ingrese correo"
+
+                 name="correo" [(ngModel)]= "usuario.correo"
+
+                 pattern="^([a-zA-Z0-9-.]+)@([a-zA-Z0-9-.]+).([a-zA-Z]{2,5})$"
+
+                 #email required>
+
+      </ion-input>
+
+    </ion-item> 
+    <br>
+
+
+    <ion-button 
+
+    type="submit" (click)="onResetPassword(email)" expand="block" >
+
+      Restablecer
+
+    </ion-button>
+
+  </form>
+
+
+</ion-content>

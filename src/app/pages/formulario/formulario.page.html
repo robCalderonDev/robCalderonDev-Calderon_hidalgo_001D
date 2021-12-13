@@ -2,7 +2,7 @@
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-back-button
-          defaultHref="/inicio"
+          defaultHref="/login"
           text="Volver"
           color="primary">
           </ion-back-button>
@@ -94,7 +94,7 @@
 
     <ion-button [disabled] ="formulario.invalid"
 
-            type="submit" (click)="onRegister(email, password)" expand="block" routerLink='/inicio' >
+            type="submit" (click)="onRegister(email, password)" expand="block"  >
 
       Registrar
 

@@ -36,10 +36,10 @@ export class FormularioPage implements OnInit {
   }
   async onRegister(email, password){
     try{
-      const user = await this.authSvc.register(email.value, password.value);
-      if (user){
-        console.log('User', user);
-        const isVerified= this.authSvc.isEmailVerified(user);
+      const usuario = await this.authSvc.register(email.value, password.value);
+      if (usuario){
+        console.log('User', usuario);
+        const isVerified= this.authSvc.isEmailVerified(usuario);
         this.redirectUser(isVerified);
       }
     }catch(error){

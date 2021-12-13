@@ -6,6 +6,7 @@ import { Observable, of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -23,8 +24,16 @@ export class AuthService {
     );
     
   }
+  
+  async resetPassword(email:string):Promise<void>{
+    try{
+      this.afAuth.sendPasswordResetEmail(email);
+    }
+      catch(error){console.log('Error: ', error)
+    }
 
-
+    }
+  
 
   async register(nombre: string, password: string): Promise<User> {
     try{
@@ -35,18 +44,19 @@ export class AuthService {
     catch(error){console.log('Error: ', error)}
   }
 
-  async login(nombre: string, password: string): Promise<User> {
+  async login(email: string, password: string): Promise<User> {
     try {
-    const { user } = await this.afAuth.signInWithEmailAndPassword(nombre, password);
+    const { user } = await this.afAuth.signInWithEmailAndPassword(email, password);
     this.updateUserData(user);
     return user;
   } catch (error){
     console.log('Error: ', error);
   }
+  }
+
+  
   
 
-
-  }
   
   
   
@@ -74,6 +84,7 @@ export class AuthService {
 
   }
 
+
   private updateUserData(user:User){
     const userRef:AngularFirestoreDocument<User> =this.afs.doc(`users/${user.uid}`)
     const data:User = {
@@ -85,6 +96,7 @@ export class AuthService {
 
     return userRef.set(data, {merge: true});
   }
+
   
 
   

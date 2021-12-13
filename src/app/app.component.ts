@@ -13,19 +13,9 @@ interface Componente {
 export class AppComponent {
   componentes : Componente []=[
     {
-      icon :'book-outline',
-      name :'Recetas',
+      icon :'car-sport-outline',
+      name :'Autos',
       redirecTo:'/recetas'
-    },
-    {
-      icon :'clipboard-outline',
-      name :'Registrarse',
-      redirecTo:'/formulario'
-    },
-    {
-      icon :'enter-outline',
-      name :'Login',
-      redirecTo:'/login'
     },
     {
       icon :'person-outline',
@@ -37,6 +27,7 @@ export class AppComponent {
       name :'Api',
       redirecTo:'/api'
     },
+    
     
     
   ];

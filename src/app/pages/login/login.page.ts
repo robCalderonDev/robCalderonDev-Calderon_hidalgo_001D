@@ -1,12 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
+import { ToastController, AlertController } from '@ionic/angular';
+import { Storage } from '@ionic/storage';
+
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
 })
+
 export class LoginPage implements OnInit {
 
   usuario = {
@@ -17,8 +21,9 @@ export class LoginPage implements OnInit {
     
 
   }
+  field:string='';
 
-  constructor(private authSvc: AuthService, private router: Router) { }
+  constructor(private authSvc: AuthService, public toastController: ToastController, public alertController: AlertController,private router: Router) { }
 
   ngOnInit() {
   }
@@ -32,15 +37,28 @@ export class LoginPage implements OnInit {
 
   async onLogin(email, password){
     try{
-      const user = await this.authSvc.login(email.value, password.value);
-      if (user){
-        const isVerified = this.authSvc.isEmailVerified(user);
+      const usuario = await this.authSvc.login(email.value, password.value);
+      if (usuario){
+        const isVerified = this.authSvc.isEmailVerified(usuario);
         this.redirectUser(isVerified);
       }
+      else{
+        const toast = await this.toastController.create({
+          message:'tu cuenta no existe o no la has verificado',
+          duration:2000
+        })
+        toast.present();
+      
+      }
     }catch(error){
-    console.log('Error: ', error)
-  };
+   
+  }
+ 
+
+  
+  
  }
+ 
   
  redirectUser(isVerified:boolean): void{
   if(isVerified){
@@ -51,5 +69,6 @@ export class LoginPage implements OnInit {
   }
 
  }
-
+ 
+  
 }
